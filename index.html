@@ -43,7 +43,7 @@ nav.scrolled{border-color:var(--rule-cool);padding:0.9rem 2.5rem}
 
 /* ---- HERO ---- */
 .hero{padding:10rem 2.5rem 6rem;position:relative}
-.hero-inner{max-width:800px;margin:0 auto}
+.hero-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.2fr 0.8fr;gap:4.5rem;align-items:center}
 .kicker{display:inline-flex;align-items:center;gap:0.55rem;background:rgba(0,194,168,0.12);border:1px solid rgba(0,194,168,0.35);color:var(--teal-deep);padding:0.45rem 1rem 0.45rem 0.8rem;border-radius:20px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.85rem;margin-bottom:1.75rem}
 .kicker-dot{width:7px;height:7px;background:var(--teal);border-radius:50%;animation:pulse 1.8s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.85)}}
@@ -68,9 +68,11 @@ nav.scrolled{border-color:var(--rule-cool);padding:0.9rem 2.5rem}
 .bubble.agent .bubble-tag{color:rgba(255,255,255,0.5);text-align:right}
 .convo-badge{position:absolute;bottom:-14px;right:24px;background:var(--amber);color:var(--paper);font-size:0.75rem;font-weight:600;padding:0.4rem 0.9rem;border-radius:20px;font-family:'Inter',sans-serif}
 
-.hero-facts{display:flex;gap:2.25rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--rule)}
-.fact-num{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--navy);font-weight:600}
-.fact-lbl{font-size:0.82rem;color:var(--gray);margin-top:0.2rem;max-width:14ch}
+.hero-facts{display:flex;flex-direction:column;gap:0;background:var(--sand);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.hero-fact{padding:1.75rem 2rem;border-bottom:1px solid var(--rule)}
+.hero-fact:last-child{border-bottom:none}
+.fact-num{font-family:'Fraunces',serif;font-size:2.1rem;color:var(--navy);font-weight:600}
+.fact-lbl{font-size:0.85rem;color:var(--gray);margin-top:0.3rem}
 
 /* ---- INDUSTRIES ---- */
 .industries{padding:2.75rem 2.5rem;border-top:1px solid var(--rule-cool);border-bottom:1px solid var(--rule-cool)}
@@ -98,7 +100,21 @@ h2.title{font-family:'Fraunces',serif;font-weight:600;font-size:2.35rem;line-hei
 .feat-panel-meta{font-size:0.85rem;color:rgba(255,255,255,0.55);border-top:1px solid rgba(255,255,255,0.15);padding-top:1.25rem}
 
 /* ---- PROCESS (legitimate sequence — numbered) ---- */
-.process-line{position:relative;margin-top:3rem}
+.cc-wrap{background:var(--navy);color:var(--paper)}
+.cc-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.cc-inner .title{color:var(--paper)}
+.cc-tag{color:var(--teal);font-family:'Fraunces',serif;font-style:italic;font-size:1.02rem;margin-bottom:1rem}
+.cc-inner p.lead{color:rgba(255,255,255,0.65);font-size:1.05rem;line-height:1.7;margin-top:1rem;max-width:46ch}
+.cc-points{display:flex;flex-direction:column;gap:1.4rem}
+.cc-point{border-top:1px solid rgba(255,255,255,0.15);padding-top:1.4rem}
+.cc-point h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;margin-bottom:0.35rem}
+.cc-point p{color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6}
+.cc-inner .btn-teal{margin-top:1.75rem;display:inline-block}
+.pilot-callout{background:var(--mist);border:1px solid var(--rule-cool);border-radius:8px;padding:1.75rem;margin-top:2rem}
+.pilot-callout .tag{display:inline-block;background:var(--teal);color:var(--navy);font-size:0.72rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:20px;margin-bottom:0.9rem}
+.pilot-callout h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.2rem;color:var(--navy);margin-bottom:0.5rem}
+.pilot-callout p{color:var(--gray);font-size:0.9rem;line-height:1.6;margin-bottom:1rem}
+.pilot-callout a{color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;border-bottom:1px solid var(--navy)}
 .process-row{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding-bottom:2.75rem;position:relative}
 .process-row:not(:last-child)::before{content:'';position:absolute;left:29px;top:52px;bottom:-8px;width:1px;background:var(--rule)}
 .process-num{font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;color:var(--teal-deep)}
@@ -151,7 +167,6 @@ footer em{font-style:italic;color:var(--teal-deep)}
 .pricing-panel{grid-template-columns:1fr;text-align:left}
 .contact-inner{grid-template-columns:1fr}
 .nav-links{display:none}
-.hero-facts{flex-wrap:wrap;gap:1.5rem 2rem}
 }
 </style>
 </head>
@@ -184,19 +199,19 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <a href="#contact" class="btn-primary">Build your support team</a>
 <a href="#service" class="link-arrow">See what's included</a>
 </div>
+</div>
 <div class="hero-facts">
-<div>
-<div class="fact-num">2–3 wks</div>
+<div class="hero-fact">
+<div class="fact-num">1–2 wks</div>
 <div class="fact-lbl">from contract to live</div>
 </div>
-<div>
+<div class="hero-fact">
 <div class="fact-num">24–48 hrs</div>
 <div class="fact-lbl">agent replacement</div>
 </div>
-<div>
+<div class="hero-fact">
 <div class="fact-num">40–60%</div>
 <div class="fact-lbl">typical cost savings</div>
-</div>
 </div>
 </div>
 </div>
@@ -211,6 +226,31 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <span>Real estate</span>
 <span>Logistics</span>
 <span>Professional services</span>
+</div>
+</div>
+</div>
+
+<div class="wrap cc-wrap">
+<div class="cc-inner">
+<div>
+<div class="cc-tag">For call centers & BPOs</div>
+<h2 class="title">Already running a call center?</h2>
+<p class="lead">We also work behind the scenes — supplying bilingual agents to call centers that need to scale fast without the hiring headache.</p>
+<a href="#contact" class="btn-teal">Talk to us about capacity</a>
+</div>
+<div class="cc-points">
+<div class="cc-point">
+<h4>White-label capacity</h4>
+<p>Your brand, your client relationship — we simply supply the bilingual agents behind the scenes.</p>
+</div>
+<div class="cc-point">
+<h4>Wholesale pricing at volume</h4>
+<p>Rates built for reselling, not retail — the more agents, the more room to price competitively.</p>
+</div>
+<div class="cc-point">
+<h4>Ready in 1–2 weeks</h4>
+<p>Same onboarding process as any account — screened, trained, and supervised from day one.</p>
+</div>
 </div>
 </div>
 </div>
@@ -260,7 +300,15 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <div class="inner">
 <div class="head-row">
 <h2 class="title">From first conversation to fully supported.</h2>
+<div>
 <p class="head-note">No complexity, no bureaucracy — a practical, human process built around your operation.</p>
+<div class="pilot-callout">
+<span class="tag">Low commitment</span>
+<h4>Not ready to commit? Start with a pilot.</h4>
+<p>Two weeks, 2 to 3 agents, no obligation to continue if it's not the right fit.</p>
+<a href="#contact">Ask about the pilot program</a>
+</div>
+</div>
 </div>
 <div class="process-line">
 <div class="process-row">
@@ -295,7 +343,7 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <p>We'll tailor a proposal around agent count, hours, and scope of support — and send it within 24 hours.</p>
 <dl class="def-list">
 <div class="def-item"><dt>Languages</dt><dd>Spanish + English</dd></div>
-<div class="def-item"><dt>Onboarding</dt><dd>2–3 weeks</dd></div>
+<div class="def-item"><dt>Onboarding</dt><dd>1–2 weeks</dd></div>
 <div class="def-item"><dt>Pilot program</dt><dd>Available</dd></div>
 </dl>
 </div>
@@ -303,6 +351,7 @@ footer em{font-style:italic;color:var(--teal-deep)}
 </div>
 </div>
 </div>
+
 
 <div class="wrap" id="faq">
 <div class="inner">
@@ -313,7 +362,7 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <div class="faq-panel">
 <div class="faq-item">
 <div class="faq-q" onclick="toggleFaq(this)"><h3>How quickly can we get started?</h3><span class="faq-toggle">+</span></div>
-<div class="faq-a"><p>The full process from signed contract to live operation takes 2 to 3 weeks, including agent selection, training, and quality testing before you go live.</p></div>
+<div class="faq-a"><p>The full process from signed contract to live operation takes 1 to 2 weeks, including agent selection, training, and quality testing before you go live.</p></div>
 </div>
 <div class="faq-item">
 <div class="faq-q" onclick="toggleFaq(this)"><h3>Can we try the service first?</h3><span class="faq-toggle">+</span></div>
