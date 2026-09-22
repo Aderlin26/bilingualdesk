@@ -17,6 +17,7 @@
 --amber:#C6822A;
 --amber-soft:#FBF0DF;
 --paper:#FFFFFF;
+--bg:#EEF1F5;
 --sand:#F7F5F0;
 --mist:#F0F4FF;
 --gray:#5B6472;
@@ -25,7 +26,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden;font-size:16px;line-height:1.6}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden;font-size:16px;line-height:1.6}
 .serif{font-family:'Fraunces',serif}
 ::selection{background:var(--amber-soft);color:var(--navy)}
 
@@ -100,6 +101,28 @@ h2.title{font-family:'Fraunces',serif;font-weight:600;font-size:2.35rem;line-hei
 .feat-panel-meta{font-size:0.85rem;color:rgba(255,255,255,0.55);border-top:1px solid rgba(255,255,255,0.15);padding-top:1.25rem}
 
 /* ---- PROCESS (legitimate sequence — numbered) ---- */
+.compare-table{width:100%;border-collapse:collapse;margin:2.5rem 0 3.5rem;background:var(--paper);border:1px solid var(--rule-cool);border-radius:8px;overflow:hidden}
+.compare-table th{text-align:left;font-family:'Inter',sans-serif;font-size:0.8rem;color:var(--gray);font-weight:600;padding:1rem 1.5rem;background:var(--sand)}
+.compare-table th.mid{text-align:center}
+.compare-table td{padding:0.9rem 1.5rem;border-top:1px solid var(--rule-cool);font-size:0.9rem;color:var(--ink)}
+.compare-table td.mid{text-align:center}
+.compare-table td.no{color:#B0AFA8}
+.compare-table td.yes{color:var(--teal-deep);font-weight:600}
+.compare-table tr:first-child td{border-top:1px solid var(--rule-cool)}
+.compare-table td:first-child{font-weight:500;color:var(--navy)}
+.problem-wrap{background:var(--paper);padding:5rem 2.5rem 2rem}
+.problem-inner{max-width:1180px;margin:0 auto}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-top:2.5rem}
+.problem-item{background:var(--paper);padding:1.75rem}
+.problem-item h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem;color:var(--navy);margin-bottom:0.4rem}
+.problem-item p{font-size:0.87rem;color:var(--gray);line-height:1.55}
+.paths-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.path-card{display:block;background:var(--sand);border:1px solid var(--rule);border-radius:8px;padding:2rem;text-decoration:none;transition:border-color .2s,transform .2s}
+.path-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.path-tag{font-size:0.78rem;font-weight:700;color:var(--teal-deep);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.75rem}
+.path-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;color:var(--navy);margin-bottom:0.5rem}
+.path-card p{color:var(--gray);font-size:0.92rem;line-height:1.6;margin-bottom:1.25rem}
+.path-cta{color:var(--navy);font-weight:600;font-size:0.9rem}
 .cc-wrap{background:var(--navy);color:var(--paper)}
 .cc-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .cc-inner .title{color:var(--paper)}
@@ -158,6 +181,7 @@ footer p{font-size:0.82rem;color:var(--gray)}
 footer em{font-style:italic;color:var(--teal-deep)}
 
 @media(max-width:860px){
+.paths-inner{grid-template-columns:1fr}
 .hero-inner{grid-template-columns:1fr}
 .hero h1{font-size:2.5rem}
 .head-row{grid-template-columns:1fr}
@@ -185,7 +209,7 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <a href="#how">Process</a>
 <a href="#pricing">Pricing</a>
 <a href="#faq">FAQ</a>
-<a href="#contact" class="nav-cta">Talk to us</a>
+<a href="#contact" class="nav-cta">Book a call</a>
 </div>
 </nav>
 
@@ -193,10 +217,10 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <div class="hero-inner">
 <div>
 <div class="kicker"><span class="kicker-dot"></span>Now accepting new partners</div>
-<h1>Support that speaks your customer's language.</h1>
-<p class="hero-sub">Native Spanish-English agents who make every conversation feel local — while helping you reduce support costs by 40–60%.</p>
+<h1>A managed bilingual support team, built around how you already operate.</h1>
+<p class="hero-sub">We provide the bilingual agents, plus the supervision, QA, and reporting to run them — so your customers get answers, and you get room to grow.</p>
 <div class="hero-actions">
-<a href="#contact" class="btn-primary">Build your support team</a>
+<a href="#contact" class="btn-primary">Book a 15-minute call</a>
 <a href="#service" class="link-arrow">See what's included</a>
 </div>
 </div>
@@ -210,12 +234,29 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <div class="fact-lbl">agent replacement</div>
 </div>
 <div class="hero-fact">
-<div class="fact-num">40–60%</div>
-<div class="fact-lbl">typical cost savings</div>
+<div class="fact-num">2 weeks</div>
+<div class="fact-lbl">Pilot program, no obligation</div>
 </div>
 </div>
 </div>
 </section>
+
+<div class="paths-wrap">
+<div class="paths-inner">
+<a href="#service" class="path-card">
+<div class="path-tag">For businesses</div>
+<h3>Need bilingual customer support?</h3>
+<p>We build and manage the team — you focus on running your business.</p>
+<span class="path-cta">Build your support team →</span>
+</a>
+<a href="#callcenters" class="path-card">
+<div class="path-tag">For call centers &amp; BPOs</div>
+<h3>Need more bilingual capacity?</h3>
+<p>White-label agents at wholesale rates, ready to plug into your operation.</p>
+<span class="path-cta">Discuss a capacity partnership →</span>
+</a>
+</div>
+</div>
 
 <div class="industries">
 <div class="industries-inner">
@@ -230,13 +271,14 @@ footer em{font-style:italic;color:var(--teal-deep)}
 </div>
 </div>
 
-<div class="wrap cc-wrap">
+
+<div class="wrap cc-wrap" id="callcenters">
 <div class="cc-inner">
 <div>
 <div class="cc-tag">For call centers & BPOs</div>
 <h2 class="title">Already running a call center?</h2>
 <p class="lead">We also work behind the scenes — supplying bilingual agents to call centers that need to scale fast without the hiring headache.</p>
-<a href="#contact" class="btn-teal">Talk to us about capacity</a>
+<a href="#contact" class="btn-teal">Discuss a capacity partnership</a>
 </div>
 <div class="cc-points">
 <div class="cc-point">
@@ -256,7 +298,37 @@ footer em{font-style:italic;color:var(--teal-deep)}
 </div>
 
 <div class="wrap features" id="service">
-<div class="inner">
+<div class="problem-inner" style="margin-bottom:2rem">
+<div class="section-eyebrow" style="color:var(--teal-deep)">Sound familiar?</div>
+<h2 class="title" style="max-width:20ch">What most teams are dealing with right now.</h2>
+</div>
+<div class="problem-grid">
+<div class="problem-item">
+<h4>Bilingual hires are hard to find</h4>
+<p>And harder to keep — turnover means you're back to square one every few months.</p>
+</div>
+<div class="problem-item">
+<h4>Spanish support is inconsistent</h4>
+<p>Great when the right agent is on shift, gone when they're not.</p>
+</div>
+<div class="problem-item">
+<h4>Customers are left waiting</h4>
+<p>Every delayed reply is a chance for them to look somewhere else.</p>
+</div>
+<div class="problem-item">
+<h4>US staffing costs keep climbing</h4>
+<p>Recruiting, training, payroll, benefits — before an agent takes a single call.</p>
+</div>
+<div class="problem-item">
+<h4>Managing a team is a full-time job</h4>
+<p>One you probably didn't plan to take on when volume started growing.</p>
+</div>
+<div class="problem-item">
+<h4>Volume spikes without warning</h4>
+<p>And scaling an in-house team fast enough almost never happens.</p>
+</div>
+</div>
+<div class="inner" style="padding-top:4rem">
 <div class="head-row">
 <h2 class="title">The support experience your customers remember.</h2>
 <p class="head-note">We handle the everyday conversations with care, consistency, and cultural fluency — so you can focus on the next stage of growth.</p>
@@ -289,7 +361,7 @@ footer em{font-style:italic;color:var(--teal-deep)}
 </div>
 </div>
 <div class="feat-panel">
-<p class="serif">"We built BilingualDesk around one idea: a customer shouldn't feel like a second thought in their own language."</p>
+<p class="serif">"The difference isn't just that our agents speak Spanish. It's that every account comes with management, QA, and reporting built in — you're not just renting a voice, you're outsourcing the whole operation."</p>
 <div class="feat-panel-meta">Standard on every account — no add-on pricing.</div>
 </div>
 </div>
@@ -333,6 +405,20 @@ footer em{font-style:italic;color:var(--teal-deep)}
 
 <div class="wrap" id="pricing" style="background:var(--mist)">
 <div class="inner">
+<div class="head-row" style="margin-bottom:0">
+<h2 class="title">What you stop managing yourself.</h2>
+<p class="head-note">Every one of these is either fully handled by us, or something you'd otherwise be building in-house.</p>
+</div>
+<table class="compare-table">
+<tr><th>Responsibility</th><th class="mid">In-house team</th><th class="mid">BilingualDesk</th></tr>
+<tr><td>Recruiting &amp; hiring</td><td class="mid no">You</td><td class="mid yes">Included</td></tr>
+<tr><td>Training &amp; onboarding</td><td class="mid no">You</td><td class="mid yes">Included</td></tr>
+<tr><td>Payroll &amp; benefits</td><td class="mid no">You</td><td class="mid yes">Included</td></tr>
+<tr><td>Daily supervision &amp; QA</td><td class="mid no">You</td><td class="mid yes">Included</td></tr>
+<tr><td>Scheduling &amp; coverage</td><td class="mid no">You</td><td class="mid yes">Included</td></tr>
+<tr><td>Performance reporting</td><td class="mid no">You</td><td class="mid yes">Included</td></tr>
+<tr><td>Replacing underperformers</td><td class="mid no">You</td><td class="mid yes">24–48 hrs</td></tr>
+</table>
 <div class="head-row" style="margin-bottom:2.5rem">
 <h2 class="title">A team shaped around your needs.</h2>
 <p class="head-note">There's no one-size-fits-all support operation — tell us what good looks like, and we'll build the coverage to match.</p>
@@ -347,7 +433,7 @@ footer em{font-style:italic;color:var(--teal-deep)}
 <div class="def-item"><dt>Pilot program</dt><dd>Available</dd></div>
 </dl>
 </div>
-<a href="#contact" class="btn-teal" style="text-align:center">Contact us</a>
+<a href="#contact" class="btn-teal" style="text-align:center">Book a discovery call</a>
 </div>
 </div>
 </div>
